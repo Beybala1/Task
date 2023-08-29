@@ -59,7 +59,7 @@ function insert($table, $data): string
 
     try {
         $stmt->execute($data);
-        return "Data inserted successfully!";
+        return "Məlumat uğurla daxil edildi";
     } catch (PDOException $e) {
         return "Error inserting data: " . $e->getMessage();
     }

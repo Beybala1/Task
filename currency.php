@@ -1,16 +1,16 @@
 <?php
 $title = "Valyuta";
-require_once('include/meta.php');
+include 'include/meta.php';
 ?>
 
 <body>
 <!-- Layout wrapper -->
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
-        <?php include('include/sidebar.php') ?>
+        <?php include 'include/sidebar.php'; ?>
         <!-- Layout container -->
         <div class="layout-page">
-            <?php include('include/header.php') ?>
+            <?php include 'include/header.php'; ?>
             <!-- Content wrapper -->
             <div class="content-wrapper">
                 <!-- Content -->
@@ -38,7 +38,7 @@ require_once('include/meta.php');
                     </div>
                 </div>
                 <!-- / Content -->
-                <?php include('include/footer.php') ?>
+                <?php include 'include/footer.php'; ?>
             </div>
             <!-- Content wrapper -->
         </div>
@@ -50,7 +50,7 @@ require_once('include/meta.php');
     <div class="drag-target"></div>
 </div>
 <!-- / Layout wrapper -->
-<?php include('include/script.php') ?>
+<?php include 'include/script.php'; ?>
 
 <!-- Include jQuery library -->
 <script>

@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo ">
-        <a href="index-2.html" class="app-brand-link">
+        <a href="index.php" class="app-brand-link">
             <span class="app-brand-logo demo">
                 <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -54,28 +54,28 @@
         </a>
     </div>
     <ul class="menu-inner py-1">
-        <li class="menu-item">
-            <a href="index.php" class="menu-link ">
-                <i class='menu-icon bx bxs-news' ></i>
-                <div data-i18n="Xəbərlər">Ödəniş növü</div>
+        <li class="menu-item <?php if ($_SERVER['PHP_SELF'] == '/index.php') echo 'active'; ?>">
+            <a href="index.php" class="menu-link">
+                <i class='menu-icon bx bxs-news'></i>
+                <div data-i18n="Ödəniş üsulu">Ödəniş üsulu</div>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="currency.php" class="menu-link ">
-                <i class='menu-icon bx bxs-news' ></i>
-                <div data-i18n="Xəbərlər">Valyuta</div>
+        <li class="menu-item <?php if ($_SERVER['PHP_SELF'] == '/currency.php') echo 'active'; ?>">
+            <a href="currency.php" class="menu-link">
+                <i class='menu-icon bx bxs-news'></i>
+                <div data-i18n="Valyuta">Valyuta</div>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="payment.php" class="menu-link ">
-                <i class='menu-icon bx bxs-news' ></i>
-                <div data-i18n="Xəbərlər">Ödəniş</div>
+        <li class="menu-item <?php if ($_SERVER['PHP_SELF'] == '/payment.php') echo 'active'; ?>">
+            <a href="payment.php" class="menu-link">
+                <i class='menu-icon bx bxs-news'></i>
+                <div data-i18n="Ödəniş">Ödəniş</div>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="payment_table.php" class="menu-link ">
-                <i class='menu-icon bx bxs-news' ></i>
-                <div data-i18n="Xəbərlər">Ödəniş cədvəli</div>
+        <li class="menu-item <?php if ($_SERVER['PHP_SELF'] == '/payment_table.php') echo 'active'; ?>">
+            <a href="payment_table.php" class="menu-link">
+                <i class='menu-icon bx bxs-news'></i>
+                <div data-i18n="Ödəniş cədvəli">Ödəniş cədvəli</div>
             </a>
         </li>
     </ul>

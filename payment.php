@@ -1,17 +1,17 @@
 <?php
 $title = "Ödəniş";
-include('include/meta.php');
 require_once('config/db.php');
 require_once('config/functions.php');
+include 'include/meta.php';
 ?>
 <body>
 <!-- Layout wrapper -->
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
-        <?php include('include/sidebar.php') ?>
+        <?php include 'include/sidebar.php'; ?>
         <!-- Layout container -->
         <div class="layout-page">
-            <?php include('include/header.php') ?>
+            <?php include 'include/header.php'; ?>
             <!-- Content wrapper -->
             <div class="content-wrapper">
                 <!-- Content -->
@@ -20,7 +20,6 @@ require_once('config/functions.php');
                         <div class="card">
                             <h5 class="card-header">Ödəniş əlavə et</h5>
                             <div class="card-body">
-
                                 <form method="post">
                                     <div class="mb-3">
                                         <label class="form-label" for="bs-validation-amount">Məbləğ</label>
@@ -79,7 +78,7 @@ require_once('config/functions.php');
                     </div>
                 </div>
                 <!-- / Content -->
-                <?php include('include/footer.php') ?>
+                <?php include 'include/footer.php'; ?>
             </div>
             <!-- Content wrapper -->
         </div>
@@ -91,7 +90,7 @@ require_once('config/functions.php');
     <div class="drag-target"></div>
 </div>
 <!-- / Layout wrapper -->
-<?php include('include/script.php') ?>
+<?php include 'include/script.php'; ?>
 
 <script>
     $(document).ready(function() {
