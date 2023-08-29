@@ -1,28 +1,6 @@
 <?php
 
-//Get absolute path of the current working directory
-function asset($path): string
-{
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
-    $host = $_SERVER['HTTP_HOST'];
-    return $protocol . '://' . $host . '/' . ltrim($path, '/');
-}
-
-//Count the number of rows in a table
-function count_($table): void
-{
-    global $con;
-    $query = "SELECT COUNT(*) FROM $table";
-
-    // Prepare and execute the query
-    $stmt = $con->prepare($query);
-    $stmt->execute();
-
-    // Fetch the result
-    $row_count = $stmt->fetchColumn();
-    echo $row_count;
-}
-
+//get data from a table
 function get($table): bool|array
 {
     global $con;
@@ -32,25 +10,22 @@ function get($table): bool|array
 }
 
 //Secure form data
-function csrf($input) {
+function csrf($input): string
+{
     return isset($input) ? trim(htmlspecialchars($input)) : '';
 }
 
 //Insert data into a table
-
 function insert($table, $data): string
 {
-    // Additional validation: Ensure all fields are filled
     global $con;
+    // Additional validation: Ensure all fields are filled
+    foreach ($data as $value) {
+        if (empty($value)) {
+            return "Xanaları boş buraxmaq olmaz.";
+        }
+    }
 
-//    // Additional validation: Ensure all fields are filled
-//    foreach ($data as $field => $value) {
-//        if (empty($value)) {
-//            return "All fields are required.";
-//        }
-//    }
-
-    // Prepare and execute the SQL query
     $tableRow = implode(', ', array_keys($data));
     $values = ':' . implode(', :', array_keys($data));
 
@@ -61,7 +36,7 @@ function insert($table, $data): string
         $stmt->execute($data);
         return "Məlumat uğurla daxil edildi";
     } catch (PDOException $e) {
-        return "Error inserting data: " . $e->getMessage();
+        return "Xəta: " . $e->getMessage();
     }
 }
 

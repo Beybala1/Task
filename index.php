@@ -2,7 +2,6 @@
 $title = "Ödəniş üsulu";
 include 'include/meta.php';
 ?>
-
 <body>
 <!-- Layout wrapper -->
 <div class="layout-wrapper layout-content-navbar">
@@ -60,11 +59,10 @@ include 'include/meta.php';
     $(document).ready(function() {
         $("#name").keypress(function(event) {
             if (event.which === 13) {
-                event.preventDefault(); // Prevent form submission
-                $("#submit").click();   // Trigger the click event of the submit button
+                event.preventDefault();
+                $("#submit").click();
             }
         });
-
         $("#submit").click(function() {
             var name = $("#name").val();
 
@@ -81,10 +79,7 @@ include 'include/meta.php';
                 },
                 cache: false,
                 success: function(data) {
-                    // Display a success message
                     alert("Ödəniş üsülü uğurla əlavə edildi");
-
-                    // Clear the input value
                     $("#name").val('');
                 },
                 error: function(xhr, status, error) {
@@ -95,9 +90,5 @@ include 'include/meta.php';
     });
 
 </script>
-
-<!-- Display Result -->
-<div id="result"></div>
 </body>
-
 </html>
